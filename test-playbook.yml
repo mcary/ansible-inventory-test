@@ -1,0 +1,16 @@
+---
+- name: Test play
+  hosts: group1
+
+  tasks:
+  - name: Just run hostname
+    ansible.builtin.command: hostname
+  - name: Sleep a bit...
+    ansible.builtin.command: sleep 5
+
+- name: Test play2
+  hosts: group2
+
+  tasks:
+  - name: Just run ls
+    ansible.builtin.command: ls
