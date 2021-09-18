@@ -1,13 +1,28 @@
-foo
-bar
+#!/bin/sh
 
-[group1]
-foo
-
-[group2]
-bar
-
-[all:vars]
-ansible_connection=local
-; Suppress warning about python path on darwin
-ansible_python_interpreter=/usr/bin/python
+cat <<EOF
+{
+  "all": {
+    "hosts": [
+      "foo",
+      "bar"
+    ],
+    "vars": {
+      "ansible_connection": "local",
+      ";": "Suppress warning about python path on darwin",
+      "ansible_python_interpreter": "/usr/bin/python"
+    }
+  },
+  "group1": {
+    "hosts": [
+      "foo"
+    ]
+  },
+  "group2": {
+    "hosts": [
+      "bar"
+    ]
+  },
+  "_meta": {
+  }
+}
