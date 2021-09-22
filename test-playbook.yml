@@ -14,3 +14,10 @@
   tasks:
   - name: Just run ls
     ansible.builtin.command: ls
+
+- name: Webhook locally
+  hosts: localhost
+
+  tasks:
+    - name: Run curl
+      command: curl http://www.google.com/
